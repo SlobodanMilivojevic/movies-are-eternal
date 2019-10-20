@@ -5,7 +5,12 @@ export class Search extends Component {
         text: ""
     };
 
-    onSubmit = e => e.preventDefault();
+    onSubmit = e => {
+        e.preventDefault();
+        if(this.state.text !== "") {
+            this.props.searchMovies(this.state.text);
+        }
+    }
 
     onChange = e => this.setState({ [e.target.name]: e.target.value });
 

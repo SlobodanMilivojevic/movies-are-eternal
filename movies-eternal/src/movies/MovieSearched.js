@@ -5,7 +5,11 @@ const MovieSearched = props => {
     return (
         <div className="movie-wrapper">
             <div className="movie-title">{props.movie.title}</div>
-            <img src={"https://image.tmdb.org/t/p/w185_and_h278_bestv2/" + props.movie.poster_path} alt={props.movie.title} className="movie-poster" />
+            {props.movie.poster_path === null ? (
+                <img src="https://via.placeholder.com/185x278.png" alt="No poster" />
+            ) : (
+                <img src={"https://image.tmdb.org/t/p/w185_and_h278_bestv2/" + props.movie.poster_path} alt={props.movie.title} className="movie-poster" />
+            )}
         </div>
     )
 }
