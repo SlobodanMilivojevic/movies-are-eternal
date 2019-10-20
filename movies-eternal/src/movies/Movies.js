@@ -4,6 +4,22 @@ import Spinner from '../assets/Spinner';
 import PropTypes from 'prop-types';
 
 class Movies extends Component {
+    state = {
+        favorites: []
+    };
+
+    FavoriteList = fav => {
+        let favoriteArray = this.state.favorites;
+        if(favoriteArray.includes(fav)) {
+            
+        } else {
+            favoriteArray.push(fav);
+        }
+        
+        this.setState({ favorites: favoriteArray });
+        console.log(this.state.favorites);
+    }
+
     render() {
         if(this.props.loading) {
             return <Spinner />
@@ -11,19 +27,13 @@ class Movies extends Component {
             return (
                 <div className="grid-movies">
                     {this.props.movies.map(movie => (
-                        <MovieSearched key={movie.id} movie={movie} />
+                        <MovieSearched key={movie.id} movie={movie} favorites={this.FavoriteList} />
                     ))}
                 </div>
             );
         }
     }
 }
-
-// const movieItemStyle = {
-//     display: 'grid',
-//     gridTemplateColumns: 'repeat(3, 1fr)',
-//     gridGap: '1rem'
-// }
 
 Movies.propTypes = {
     movies: PropTypes.array.isRequired,
