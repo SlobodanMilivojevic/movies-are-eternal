@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Search from './movies/Search';
-import Movies from './movies/Movies';
+import Search from './movies/search/Search';
+import Movies from './movies/movies/Movies';
 import './App.css';
 import axios from 'axios';
 

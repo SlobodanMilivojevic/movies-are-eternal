@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import MovieSearched from './MovieSearched';
-import Spinner from '../assets/Spinner';
+import MovieSearched from '../movie-searched/MovieSearched';
+import Spinner from '../../assets/Spinner';
+import './Movies.css';
 import PropTypes from 'prop-types';
 
 class Movies extends Component {

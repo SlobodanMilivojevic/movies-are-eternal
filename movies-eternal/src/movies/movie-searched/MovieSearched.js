@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faList, faStar } from '@fortawesome/free-solid-svg-icons';
+import './MovieSearched.css';
 import PropTypes from 'prop-types';
 
 class MovieSearched extends Component {
