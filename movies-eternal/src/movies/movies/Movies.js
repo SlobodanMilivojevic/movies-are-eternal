@@ -9,16 +9,32 @@ class Movies extends Component {
         favorites: []
     };
 
-    FavoriteList = fav => {
-        let favoriteArray = this.state.favorites;
-        if(favoriteArray.includes(fav)) {
-            
-        } else {
-            favoriteArray.push(fav);
+    componentDidMount() {
+        const local = JSON.parse(localStorage.getItem("favorites"));
+        if(local !== null) {
+            this.setState({
+                favorites: local
+            });
         }
-        
-        this.setState({ favorites: favoriteArray });
-        console.log(this.state.favorites);
+    }
+
+    FavoriteList = fav => {
+        let favoriteUpdate = this.state.favorites;
+
+        if(favoriteUpdate.includes(fav)) {
+            favoriteUpdate = favoriteUpdate.filter(item => item !== fav);
+            localStorage.setItem("favorites", JSON.stringify(favoriteUpdate));
+            this.setState({
+                favorites: favoriteUpdate
+            });
+        }
+        else {
+            favoriteUpdate.push(fav);
+            localStorage.setItem("favorites", JSON.stringify(favoriteUpdate));
+            this.setState({
+                favorites: favoriteUpdate
+            });
+        }
     }
 
     render() {
@@ -28,7 +44,7 @@ class Movies extends Component {
             return (
                 <div className="grid-movies">
                     {this.props.movies.map(movie => (
-                        <MovieSearched key={movie.id} movie={movie} favorites={this.FavoriteList} />
+                        <MovieSearched key={movie.id} movie={movie} infavorites={this.state.favorites.includes(movie.id)} favorites={this.FavoriteList} />
                     ))}
                 </div>
             );

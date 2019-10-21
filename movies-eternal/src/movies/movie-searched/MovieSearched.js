@@ -20,7 +20,7 @@ class MovieSearched extends Component {
                 )}
                 <div className="movie-info">
                     <div className="movie-add-watch"><FontAwesomeIcon icon={faList} /></div>
-                    <div className="movie-add-favorite" onClick={() => {this.Favorites(this.props.movie.id)}}><FontAwesomeIcon icon={faStar} /></div>
+                    <div className={"movie-add-favorite " + (this.props.infavorites ? 'active' : 'disabled')} onClick={() => {this.Favorites(this.props.movie.id)}}><FontAwesomeIcon icon={faStar} /></div>
                     <div className="movie-popularity">Popularity: {this.props.movie.popularity}</div>
                     <div className="movie-release">Release date: {this.props.movie.release_date}</div>
                 </div>

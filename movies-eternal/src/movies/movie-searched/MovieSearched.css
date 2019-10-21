@@ -4,15 +4,15 @@
     margin-bottom: 30px;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.35);
     text-align: center;
-  }
-  .movie-wrapper:nth-child(4n+1) {
+}
+.movie-wrapper:nth-child(4n+1) {
     margin-left: 0;
-  }
-  .movie-wrapper img {
+}
+.movie-wrapper img {
     display: block;
     margin: 0 auto;
-  }
-  .movie-title {
+}
+.movie-title {
     min-height: 52px;
     padding: 5px 10px;
     display: flex;
@@ -21,13 +21,13 @@
     font-size: 18px;
     font-weight: bold;
     background-color: #f2f2f2;
-  }
-  .movie-info {
+}
+.movie-info {
     position: relative;
     padding: 0 30px;
-  }
-  .movie-add-watch,
-  .movie-add-favorite {
+}
+.movie-add-watch,
+.movie-add-favorite {
     position: absolute;
     left: 0;
     top: 0;
@@ -40,13 +40,16 @@
     justify-content: center;
     font-weight: normal;
     cursor: pointer;
-  }
-  .movie-add-favorite {
+}
+.movie-add-favorite {
     left: auto;
     right: 0;
-  }
-  .movie-popularity,
-  .movie-release {
+}
+.movie-add-favorite.active {
+    color: red;
+}
+.movie-popularity,
+.movie-release {
     padding: 5px 10px;
     border-top: 1px solid #f2f2f2;
-  }
+}
