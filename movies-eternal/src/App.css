@@ -10,33 +10,3 @@
   margin: 50px auto;
   padding: 0 20px;
 }
-.movies-container form {
-  width: 500px;
-  max-width: 100%;
-  margin: 0 auto;
-  display: flex;
-}
-.movies-container form input {
-  height: 40px;
-  padding: 10px 20px;
-  background: #f2f2f2;
-  color: #000;
-  flex-grow: 1;
-  border: 1px solid #d7dbe5;
-  border-right: 0;
-  border-radius: 5px 0 0 5px;
-  font-size: 16px;
-  outline: none;
-}
-.movies-container form button {
-  background-color: #14bd81;
-  border: 0;
-  border-radius: 0 5px 5px 0;
-  color: #fff;
-  cursor: pointer;
-  font-size: 15px;
-  outline: none;
-  padding: 0 10px;
-  min-width: 100px;
-  text-transform: uppercase;
-}

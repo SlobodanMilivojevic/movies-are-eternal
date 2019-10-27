@@ -4,6 +4,8 @@
     margin-bottom: 30px;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.35);
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 .movie-wrapper:nth-child(4n+1) {
     margin-left: 0;
@@ -11,6 +13,7 @@
 .movie-wrapper img {
     display: block;
     margin: 0 auto;
+    max-width: 100%;
 }
 .movie-title {
     min-height: 52px;
@@ -21,6 +24,7 @@
     font-size: 18px;
     font-weight: bold;
     background-color: #f2f2f2;
+    flex-grow: 1;
 }
 .movie-info {
     position: relative;
@@ -45,6 +49,7 @@
     left: auto;
     right: 0;
 }
+.movie-add-watch.active,
 .movie-add-favorite.active {
     color: red;
 }
